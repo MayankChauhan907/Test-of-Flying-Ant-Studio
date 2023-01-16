@@ -5,29 +5,33 @@ using UnityEngine;
 public class ThrowBall : MonoBehaviour
 {
     [SerializeField]
-    Vector3 _direction, _endPos;
+    Vector3 _direction;
     [SerializeField]
     float _speed = 10f;
+    [SerializeField]
+    bool _Move = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (_Move)
         {
-            foreach (Touch touch in Input.touches)
-            {
-                if (touch.phase == TouchPhase.Ended)
-                {
-                    _endPos = touch.position;
-                    Debug.Log("Last Touch - " + _endPos);
-                    _direction = (this.transform.position - _endPos).normalized;
-                }
-            }
+            Move();
         }
-        if (_endPos != null)
+    }
+
+    private void Move()
+    {
+        if (_direction != null && _Move)
         {
             transform.Translate(_direction * _speed * Time.deltaTime);
         }
+    }
+
+    public void StartMovement(Vector3 EndPos)
+    {
+        _direction = (EndPos - transform.position).normalized;
+        _Move = true;
     }
 }
 
