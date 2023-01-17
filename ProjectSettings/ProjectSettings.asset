@@ -68,7 +68,7 @@ PlayerSettings:
   androidRenderOutsideSafeArea: 0
   androidUseSwappy: 1
   androidBlitType: 0
-  androidResizableWindow: 0
+  androidResizableWindow: 1
   androidDefaultWindowWidth: 1080
   androidDefaultWindowHeight: 1920
   androidMinimumWindowWidth: 400

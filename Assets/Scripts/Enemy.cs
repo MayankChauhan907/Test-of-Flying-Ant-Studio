@@ -9,10 +9,10 @@ public class Enemy : MonoBehaviour
         {
             if (other == null)
             {
-                Debug.Log("Hit");
+                //Debug.Log("Hit");
                 return;
             }
-            Debug.Log("Hit Something");
+            //Debug.Log("Hit Something");
             if (other.transform.tag == "Player")
             {
                 Destroy(other.gameObject, 0.05f);
