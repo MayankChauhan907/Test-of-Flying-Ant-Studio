@@ -23,7 +23,7 @@ public class ThrowBall : MonoBehaviour
     public void StartMovement(Vector3 EndPos)
     {
         _direction = (EndPos - transform.position).normalized;
-        Debug.Log("Direction - " + _direction);
+        //Debug.Log("Direction - " + _direction);
         _Move = true;
     }
 }

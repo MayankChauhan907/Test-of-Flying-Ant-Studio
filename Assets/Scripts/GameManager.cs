@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Debug.Log("Touch");
-
             foreach (Touch touch in Input.touches)
             {
                 if (touch.phase == TouchPhase.Began)
@@ -31,7 +29,7 @@ public class GameManager : MonoBehaviour
                     _endPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y));
                     //GameObject Cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     //Cube.transform.position = EndPos;
-                    Debug.Log("Last Touch - " + _endPos);
+                    //Debug.Log("Last Touch - " + _endPos);
                     if (hit.transform != null)
                         hit.transform.GetComponent<ThrowBall>().StartMovement(_endPos);
                 }

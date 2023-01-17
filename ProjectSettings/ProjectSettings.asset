@@ -65,12 +65,12 @@ PlayerSettings:
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
   androidStartInFullscreen: 1
-  androidRenderOutsideSafeArea: 1
+  androidRenderOutsideSafeArea: 0
   androidUseSwappy: 1
   androidBlitType: 0
   androidResizableWindow: 0
-  androidDefaultWindowWidth: 1920
-  androidDefaultWindowHeight: 1080
+  androidDefaultWindowWidth: 1080
+  androidDefaultWindowHeight: 1920
   androidMinimumWindowWidth: 400
   androidMinimumWindowHeight: 300
   androidFullscreenMode: 1
@@ -150,7 +150,7 @@ PlayerSettings:
   D3DHDRBitDepth: 0
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
-  resolutionScalingMode: 1
+  resolutionScalingMode: 0
   resetResolutionOnWindowResize: 1
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
