@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    Vector3 _direction, _endPos;
+    Vector2 _direction, _endPos;
     RaycastHit2D hit;
 
     // Update is called once per frame
@@ -28,10 +28,10 @@ public class GameManager : MonoBehaviour
 
                 if (touch.phase == TouchPhase.Ended)
                 {
-                    _endPos = new Vector2(touch.position.x / (float)Screen.width, touch.position.y / (float)Screen.width);
-                    GameObject Cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    Cube.transform.position = _endPos;
-                    Debug.Log("Last Touch - " + _endPos.magnitude);
+                    _endPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y));
+                    //GameObject Cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    //Cube.transform.position = EndPos;
+                    Debug.Log("Last Touch - " + _endPos);
                     if (hit.transform != null)
                         hit.transform.GetComponent<ThrowBall>().StartMovement(_endPos);
                 }

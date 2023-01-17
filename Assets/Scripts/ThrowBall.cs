@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThrowBall : MonoBehaviour
 {
     [SerializeField]
-    Vector3 _direction;
+    Vector2 _direction;
     [SerializeField]
     float _speed = 10f;
     [SerializeField]
@@ -14,15 +14,7 @@ public class ThrowBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_Move)
-        {
-            Move();
-        }
-    }
-
-    private void Move()
-    {
-        if (_direction != null && _Move)
+        if (_Move && _direction != null)
         {
             transform.Translate(_direction * _speed * Time.deltaTime);
         }
@@ -31,6 +23,7 @@ public class ThrowBall : MonoBehaviour
     public void StartMovement(Vector3 EndPos)
     {
         _direction = (EndPos - transform.position).normalized;
+        Debug.Log("Direction - " + _direction);
         _Move = true;
     }
 }
