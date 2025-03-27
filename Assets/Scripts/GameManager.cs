@@ -35,5 +35,24 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        // Handle mouse input for testing in the editor
+        if (Input.GetMouseButtonDown(0)) // Left mouse button pressed
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            hit = Physics2D.Raycast(mousePos, Vector2.zero);
+            if (hit.transform != null)
+            {
+                Debug.Log(hit.transform.name);
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0)) // Left mouse button released
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _endPos = new Vector2(mousePos.x, mousePos.y);
+            if (hit.transform != null)
+                hit.transform.GetComponent<ThrowBall>().StartMovement(_endPos);
+        }
     }
 }
